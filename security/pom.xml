@@ -6,25 +6,34 @@
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+		<security.core.version>1.0.0-SNAPSHOT</security.core.version>
+		<security.app.version>1.0.0-SNAPSHOT</security.app.version>
+		<security.browser.version>1.0.0-SNAPSHOT</security.browser.version>
+	</properties>
+
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
 				<groupId>io.spring.platform</groupId>
 				<artifactId>platform-bom</artifactId>
-				<version>Brussels-SR5</version>
+				<version>Brussels-SR4</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-dependencies</artifactId>
-				<version>Dalston.SR3</version>
+				<version>Dalston.SR2</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-	
+
 	<build>
 		<plugins>
 			<plugin>
@@ -39,8 +48,8 @@
 			</plugin>
 		</plugins>
 	</build>
-	
-	
+
+
 	<modules>
 		<module>../security-app</module>
 		<module>../security-browser</module>

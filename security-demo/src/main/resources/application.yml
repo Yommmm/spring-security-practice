@@ -1,0 +1,10 @@
+server:
+  port: 8090
+
+spring:
+  session:
+    store-type: none
+    
+security:
+  basic:
+    enabled: false
