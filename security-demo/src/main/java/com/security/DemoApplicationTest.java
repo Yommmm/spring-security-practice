@@ -32,8 +32,7 @@ public class DemoApplicationTest {
 
 	@Test
 	public void testHello() {
-		mockMvc.perform(MockMvcBuilders.get("/user")
-				.conte)
+//		mockMvc.perform(MockMvcBuilders.get("user"))
 	}
 
 }
