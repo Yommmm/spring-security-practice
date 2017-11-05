@@ -1,5 +1,7 @@
 package controller;
 
+import java.util.Date;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -59,4 +61,18 @@ public class DemoApplicationTest {
 				.andExpect(MockMvcResultMatchers.status().is4xxClientError());
 	}
 
+	@Test
+	public void whenCreateSuccess() throws Exception {
+		Date date = new Date();
+		System.out.println(date.getTime());
+		String content = "{\"username\":\"tom\",\"password\":\"password\",\"birthday\":" + date.getTime() + "}";
+		String result = mockMvc.perform(MockMvcRequestBuilders.post("/user")
+				.contentType(MediaType.APPLICATION_JSON_UTF8)
+				.content(content))
+				.andExpect(MockMvcResultMatchers.status().isOk())
+				.andExpect(MockMvcResultMatchers.jsonPath("$.id").value("1"))
+				.andReturn().getResponse().getContentAsString();
+		
+		System.out.println(result);
+	}
 }

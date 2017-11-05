@@ -1,5 +1,7 @@
 package com.security.vo;
 
+import java.util.Date;
+
 import com.fasterxml.jackson.annotation.JsonView;
 
 public class User {
@@ -8,10 +10,23 @@ public class User {
 	
 	public interface UserDetailView extends UserSimpleView {}; 
 	
+	private String id;
+	
 	private String username;
 	
 	private String password;
 	
+	private Date birthday;
+	
+	@JsonView(UserSimpleView.class)
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
 	@JsonView(UserSimpleView.class)
 	public String getUsername() {
 		return username;
@@ -28,6 +43,14 @@ public class User {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public Date getBirthday() {
+		return birthday;
+	}
+
+	public void setBirthday(Date birthday) {
+		this.birthday = birthday;
 	}
 	
 }
