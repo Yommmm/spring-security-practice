@@ -1,17 +1,11 @@
-/**
- * 
- */
 package com.security.vo;
 
-/**
- * @author zhailiang
- *
- */
 public class UserQueryCondition {
 	
 	private String username;
 	
 	private int age;
+	
 	private int ageTo;
 	
 	private String xxx;

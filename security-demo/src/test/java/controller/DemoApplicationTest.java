@@ -13,14 +13,15 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
+import com.security.DemoApplication;
+
 @RunWith(SpringRunner.class)
-@SpringBootTest
+@SpringBootTest(classes = DemoApplication.class)
 public class DemoApplicationTest {
 
 	@Autowired
 	private WebApplicationContext context;
 	
-	@Autowired
 	private MockMvc mockMvc;
 	
 	@Before
@@ -31,6 +32,7 @@ public class DemoApplicationTest {
 	@Test
 	public void whenQuerySuccess() throws Exception {
 		String result = mockMvc.perform(MockMvcRequestBuilders.get("/user")
+				.param("username", "username")
 				.contentType(MediaType.APPLICATION_JSON_UTF8))
 				.andExpect(MockMvcResultMatchers.status().isOk())
 				.andExpect(MockMvcResultMatchers.jsonPath("$.length()").value(3))
