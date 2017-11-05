@@ -1,6 +1,6 @@
 spring:
   application:
-    name: demo
+    name: security-demo
 
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
