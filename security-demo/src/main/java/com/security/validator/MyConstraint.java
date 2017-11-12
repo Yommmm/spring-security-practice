@@ -9,7 +9,7 @@ import javax.validation.Constraint;
 
 @Target({ElementType.METHOD, ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)
-@Constraint(validatedBy = )
+@Constraint(validatedBy = MyConstraintValidator.class)
 public @interface MyConstraint {
 
 }
