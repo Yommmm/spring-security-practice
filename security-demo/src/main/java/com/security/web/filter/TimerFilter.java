@@ -14,7 +14,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class TimerFilter implements Filter {
 
 	private static final Logger logger = LoggerFactory.getLogger(TimerFilter.class);

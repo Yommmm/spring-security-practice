@@ -46,6 +46,7 @@ public class UserController {
 	@JsonView(User.UserDetailView.class)
 	public User getInfo(@PathVariable(value = "id") String id) {
 //		throw new UsernameNotFoundException(id);
+		logger.info("=============进入服务=============");
 		User user = new User();
 		user.setUsername("tom");
 		return user;
