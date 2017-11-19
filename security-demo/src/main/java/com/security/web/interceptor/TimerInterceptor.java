@@ -27,7 +27,7 @@ public class TimerInterceptor implements HandlerInterceptor {
 			throws Exception {
 		logger.debug("============afterCompletion============");
 		long start = (long)request.getAttribute("startTime");
-		logger.info("============finish in =============={}", new Date().getTime() - start);
+		logger.info("============afterCompletion time interceptor finish in =============={}", new Date().getTime() - start);
 		System.out.println(ex);
 	}
 
@@ -36,13 +36,13 @@ public class TimerInterceptor implements HandlerInterceptor {
 			throws Exception {
 		logger.debug("============postHandler=============");
 		long start = (long)request.getAttribute("startTime");
-		logger.info("============finish in =============={}", new Date().getTime() - start);
+		logger.info("============postHandler time inteceptor finish in =============={}", new Date().getTime() - start);
 	}
 
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse reponse, Object handler) throws Exception {
 		logger.debug("=============preHandler============");
-		logger.info("=============start time ==========={}", new Date().getTime());
+		logger.info("=============preHandler start time ==========={}", new Date().getTime());
 		
 		logger.info(((HandlerMethod)handler).getBean().getClass().getName());
 		logger.info(((HandlerMethod)handler).getMethod().getName());
