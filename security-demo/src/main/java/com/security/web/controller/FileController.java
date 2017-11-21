@@ -46,7 +46,7 @@ public class FileController {
 	@GetMapping("/{id}")
 	public void download(@PathVariable String id, HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
-		// 
+		// try后面的括号里面的流会自动关闭，jdk7的新语法
 		try (InputStream inputStream = new FileInputStream(new File(folder, id + ".txt"));
 				OutputStream outputStream = response.getOutputStream();) {
 			
