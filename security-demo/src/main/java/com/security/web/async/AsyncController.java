@@ -12,6 +12,25 @@ public class AsyncController {
 
 	private static final Logger logger = LoggerFactory.getLogger(AsyncController.class);
 	
+	/*@GetMapping("/order")
+	public Callable<String> order() throws InterruptedException {
+		logger.info("============主线程start===========");
+//		Thread.sleep(3000);
+		Callable<String> result = new Callable<String>() {
+			
+			@Override
+			public String call() throws Exception {
+				logger.info("============副线程start===========");
+				Thread.sleep(3000);
+				logger.info("============副线程finish============");
+				return "success";
+			}
+		};
+		logger.info("============主线程finish============");
+//		return "success";
+		return result;
+	}*/
+	
 	@GetMapping("/order")
 	public Callable<String> order() throws InterruptedException {
 		logger.info("============主线程start===========");
