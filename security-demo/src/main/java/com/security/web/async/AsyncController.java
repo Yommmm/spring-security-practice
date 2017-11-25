@@ -42,14 +42,13 @@ public class AsyncController {
 	
 	@GetMapping("/order")
 	public DeferredResult<String> orderByDeferred() throws Exception {
-		logger.info("============主线程start===========");
+		logger.info("============主线程开始===========");
 		
 		String orderNumber = RandomStringUtils.randomNumeric(8);
 		mockQueue.setPlaceOrder(orderNumber);
 		DeferredResult<String> result = new DeferredResult<>();
 		deferredResultHolder.getMap().put(orderNumber, result);
 		
-		logger.info("============主线程finish============");
 		return result;
 	}	
 	

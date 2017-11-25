@@ -28,7 +28,7 @@ public class MockQueue {
 			}
 			this.completeOrder = placeOrder;
 			logger.info("下单请求处理完毕：{}", placeOrder);
-		});
+		}).start();
 	}
 
 	public String getCompleteOrder() {

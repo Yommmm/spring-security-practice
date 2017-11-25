@@ -3,8 +3,10 @@ package com.security.web.async;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.async.DeferredResult;
 
+@Component
 public class DeferredResultHolder {
 
 	private Map<String, DeferredResult<String>> map = new HashMap<String, DeferredResult<String>>();
