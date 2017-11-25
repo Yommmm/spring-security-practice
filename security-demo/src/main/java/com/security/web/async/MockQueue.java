@@ -15,9 +15,11 @@ public class MockQueue {
 		return placeOrder;
 	}
 
-	public void setPlaceOrder(String placeOrder) {
-		logger.info("=================");
-		this.placeOrder = placeOrder;
+	public void setPlaceOrder(String placeOrder) throws Exception {
+		logger.info("接到下单请求：{}", placeOrder);
+		Thread.sleep(1000);
+		this.completeOrder = placeOrder;
+		logger.info("下单请求处理完毕：{}", placeOrder);
 	}
 
 	public String getCompleteOrder() {
