@@ -25,12 +25,16 @@ import com.fasterxml.jackson.annotation.JsonView;
 import com.security.vo.User;
 import com.security.vo.UserQueryCondition;
 
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
+
 @RestController
 @RequestMapping("/user")
 public class UserController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 	
+	@ApiOperation(value = "用户查询服务")
 	@GetMapping
 	@JsonView(User.UserSimpleView.class)
 	public List<User> query(UserQueryCondition user, Pageable page){
@@ -44,7 +48,7 @@ public class UserController {
 	
 	@GetMapping(value = "/{id:\\d+}")
 	@JsonView(User.UserDetailView.class)
-	public User getInfo(@PathVariable(value = "id") String id) {
+	public User getInfo(@ApiParam(value = "用户Id") @PathVariable(value = "id") String id) {
 //		throw new UsernameNotFoundException(id);
 		logger.info("=============进入服务=============");
 		User user = new User();
