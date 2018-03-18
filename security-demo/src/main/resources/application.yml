@@ -5,6 +5,7 @@ spring:
   session:
     store-type: none
     
+#认证开启
 security:
   basic:
     enabled: true
