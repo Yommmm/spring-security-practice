@@ -27,11 +27,11 @@ public class BrowserSecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 //		http.httpBasic() //httpBasic方式登录
 		http.formLogin() //表单方式登录
-			.loginPage("/imooc-signIn.html") //指定登录页面
+			.loginPage("/authentication/require") //指定登录页面
 			.loginProcessingUrl("/authentication/form") //指定处理的过滤器
 			.and()
 			.authorizeRequests() //对请求进行授权
-			.antMatchers("/imooc-signIn.html").permitAll() //过滤授权页面
+			.antMatchers("/authentication/require").permitAll() //过滤授权页面
 			.anyRequest() //任何请求
 			.authenticated() //都需要身份认证
 			.and()
