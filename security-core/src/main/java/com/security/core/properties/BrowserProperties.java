@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.security.core.properties;
 
 public class BrowserProperties {

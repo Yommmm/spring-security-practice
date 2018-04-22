@@ -1,12 +1,5 @@
-/**
- * 
- */
 package com.security.core.properties;
 
-/**
- * @author zhailiang
- *
- */
 public enum LoginResponseType {
 	
 	/**
